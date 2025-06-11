@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Ersan Ivanda Putra</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- EmailJS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="CSS/kontak.css">
+</head>
+<body>
+
+<!-- ======= HEADER ======= -->
+<header class="main-header">
+  <div class="container nav-wrapper">
+    <div class="logo">
+      <img src="Aset/Black_White_Minimalist_Professional_Initial_Logo__1_-removebg-preview.png" alt="Logo ER" />
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="projek.html">Project</a>
+      <a href="organisasi.html">Organization</a>
+      <a href="sertifikat.html">Certificate</a>
+      <a href="kontak.html" class="active">Contact</a>
+      <a href="kebijakan.html">User Terms & Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======= CONTACT FORM ======= -->
+<section id="contact" class="contact-section">
+  <div class="container contact-container">
+    <h2 class="section-title">Let’s <span class="highlight">Connect</span></h2>
+    <p class="section-description">Reach out through the form below, and I’ll get back to you shortly.</p>
+
+    <form id="contact-form">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required />
+      </div>
+      <div class="form-group">
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn-send">Send Message</button>
+      <p id="status-msg"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer class="footer">
+  <div class="scrolling-banner">
+    <div class="scrolling-text">
+      UX Design ✶ App Design ✶ Dashboard ✶ Wireframe ✶ User Research ✶ Data Analysis ✶ UI Research ✶
+    </div>
+  </div>
+
+  <div class="footer-top">
+    <h2>Let's Connect There</h2>
+    <a href="https://wa.me/6285882380494" class="footer-hire-btn">Hire me ↗</a>
+  </div>
+
+  <div class="footer-content">
+    <div class="footer-col">
+      <div class="logo">
+        <img src="Aset/Black_White_Minimalist_Professional_Initial_Logo__1_-removebg-preview.png" alt="Logo" />
+      </div>
+      <p>
+        Working with Ersan was a turning point. His analytical mindset and system knowledge brought clarity and direction to our project.<br>
+        <em>Highly Recommended.</em>
+      </p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/ersan-ivanda-putra-509955241" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/canptr32" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projek.html">Project</a></li>
+          <li><a href="sertifikat.html">Certificate</a></li>
+        </ul>
+      </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>📞 +62-858-8238-0494</li>
+        <li>📧 ersanputra34@gmail.com</li>
+            <a href="https://www.linkedin.com/in/ersan-ivanda-putra-509955241" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit;">
+              <i class="fab fa-linkedin" style="font-size:16px; vertical-align:middle; margin-right:5px;"></i>
+              LinkedIn Profile
+            </a>      </ul>
+    </div>
+
+    <div class="footer-col">
+        <h4>Get the latest information</h4>
+        <form id="emailForm" class="subscribe-form">
+          <input type="email" id="emailInput" placeholder="Email Address" required />
+          <button type="submit">→</button>
+        </form>
+        <p id="successMessage"></p>
+      </div>
+  </div>
+
+  <div class="footer-bottom">
+  Copyright © 2025 Ersan Ivanda Putra. All Rights Reserved.
+  <a href="kebijakan.html">User Terms & Conditions</a> |
+  <a href="privacy.html">Privacy Policy</a>
+</div>
+</footer>
+
+<!-- Contact.js script -->
+<script src="contact.js"></script>
+  <!-- Firebase v8 (cocok dengan kode kamu) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="database.js"></script>
+<script src="canbot.js"></script>
+</body>
+</html>

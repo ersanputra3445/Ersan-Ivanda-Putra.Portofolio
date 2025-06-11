@@ -1,0 +1,282 @@
+/* ========== RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  line-height: 1.6;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ========== HEADER ========== */
+.main-header {
+  background-color: #0f172a;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  height: 40px;
+}
+.nav a {
+  margin-left: 25px;
+  font-weight: 500;
+  color: #f8fafc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.nav a:hover,
+.nav a.active {
+  color: #fb923c;
+}
+
+/* ========== PROJECT SECTION ========== */
+.projects-section {
+  padding: 80px 0;
+  position: relative;
+  text-align: center;
+}
+.projects-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #fb923c, #4f46e5);
+  background-size: 400% 400%;
+  animation: animateBG 20s ease infinite;
+  opacity: 0.2;
+  filter: blur(30px);
+  z-index: -1;
+}
+@keyframes animateBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.section-title .highlight {
+  color: #fb923c;
+}
+.section-description {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+/* ========== PROJECT GRID ========== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.project-card {
+  position: relative; /* Supaya posisi absolute anak-anaknya mengacu ke card ini */
+  overflow: hidden;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  color: white;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.project-info {
+  padding: 20px;
+}
+.project-info h3 {
+  color: #fb923c;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.project-info p {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+}
+
+/* ========== ICONS DI DALAM CARD SAJA ========== */
+.github-logo,
+.gdrive-logo {
+  position: absolute;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  z-index: 10;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.github-logo {
+  right: 50px; /* Geser dari kanan */
+}
+
+.gdrive-logo {
+  right: 10px;
+}
+
+/* Hover effect */
+.github-logo:hover,
+.gdrive-logo:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+}
+
+/* Biar gambarnya nggak pecah dan rapi */
+.github-logo img,
+.gdrive-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+/* ========== FOOTER ========== */
+.footer {
+  background-color: #0e1629;
+  color: #ffffff;
+  padding: 2rem 1rem 0;
+}
+.footer .scrolling-banner {
+  background: #0e1629;
+  color: #f79834;
+  text-align: center;
+  font-weight: 700;
+  padding: 0.75rem 0;
+  overflow: hidden;
+}
+.footer .scrolling-text {
+  display: inline-block;
+  animation: scroll-left 20s linear infinite;
+  white-space: nowrap;
+}
+@keyframes scroll-left {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0 1rem;
+  flex-wrap: wrap;
+}
+.footer-top h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.footer-hire-btn {
+  background-color: #f79834;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-col {
+  flex: 1 1 200px;
+}
+.footer-col h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+  color: #ccc;
+}
+.footer-col ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+.footer-col ul li a:hover {
+  color: #f79834;
+}
+.footer-col p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.footer-col em {
+  font-style: italic;
+  color: #f0f0f0;
+}
+.footer-col .social-icons a {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+.footer-col .social-icons a:hover {
+  color: #f79834;
+}
+.subscribe-form {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.subscribe-form input {
+  padding: 0.6rem 1rem;
+  border: none;
+  outline: none;
+  flex: 1;
+}
+.subscribe-form button {
+  background-color: #f79834;
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ccc;
+}
+.footer-bottom a {
+  color: #f79834;
+  margin: 0 0.25rem;
+  text-decoration: none;
+}
+.footer-bottom a:hover {
+  text-decoration: underline;
+}

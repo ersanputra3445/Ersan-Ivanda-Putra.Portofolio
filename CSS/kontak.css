@@ -1,0 +1,289 @@
+/* ===== Global Styles ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  color: #2c3e50;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ======= HEADER ======= */
+.main-header {
+  background-color: #0f172a;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  height: 40px;
+}
+.nav a {
+  margin-left: 25px;
+  font-weight: 500;
+  color: #f8fafc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.nav a:hover,
+.nav a.active {
+  color: #fb923c;
+}
+
+
+/* ===== Contact Section ===== */
+.contact-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #007bff;
+}
+
+.section-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.contact-container form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn-send {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-send:hover {
+  background-color: #218838;
+}
+
+#status-msg {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* ========== FOOTER FIXED ========== */
+.footer {
+  background-color: #0e1629;
+  color: #ffffff;
+  padding: 2rem 1rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer .scrolling-banner {
+  background: #0e1629;
+  color: #f79834;
+  text-align: center;
+  font-weight: 700;
+  padding: 0.75rem 0;
+  overflow: hidden;
+}
+
+.footer .scrolling-text {
+  display: inline-block;
+  animation: scroll-left 20s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-top h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-hire-btn {
+  background-color: #f79834;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col {
+  flex: 1 1 200px;
+}
+
+.footer-col h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+  color: #ccc;
+}
+
+.footer-col ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  color: #f79834;
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.footer-col em {
+  font-style: italic;
+  color: #f0f0f0;
+}
+
+.footer-col .social-icons a {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.footer-col .social-icons a:hover {
+  color: #f79834;
+}
+
+.subscribe-form {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.subscribe-form input {
+  padding: 0.6rem 1rem;
+  border: none;
+  outline: none;
+  flex: 1;
+}
+
+.subscribe-form button {
+  background-color: #f79834;
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ccc;
+}
+
+.footer-bottom a {
+  color: #f79834;
+  margin: 0 0.25rem;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.subscribe-form {
+  display: flex;
+}
+
+.subscribe-form input {
+  padding: 8px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.subscribe-form button {
+  padding: 8px 14px;
+  border: none;
+  background: #f79834;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.subscribe-form button:hover {
+  background: #0056b3;
+}

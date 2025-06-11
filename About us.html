@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Ersan Ivanda Putra</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-text">
+                <h2>About Me</h2>
+
+                <p>Hello! I'm Ersan Ivanda Putra, an enthusiastic Information Systems student with a strong passion for technology, innovation, and problem-solving. I believe that technology is more than just a tool — it is a bridge that transforms ideas into impactful solutions for the real world.</p>
+
+                <p>Throughout my academic journey, I have been deeply fascinated by how technology can change the way we live, work, and connect. Studying data management, system design, and business processes has fueled my interest to dive deeper into the digital world and continuously expand my knowledge.</p>
+
+                <p>My passion extends beyond the classroom. I actively participate in projects, competitions, and serve as an Assistant in the Laboratory to apply my skills in real-world scenarios. I enjoy exploring areas such as digital transformation, data analytics, and innovation-driven solutions, while strengthening my ability to think critically and adapt to new challenges.</p>
+
+                <p>In addition to technical expertise, I highly value communication, teamwork, and leadership. I believe that impactful solutions are built through collaboration and continuous personal growth, which is why I strive to balance academic excellence with character development, creativity, and resilience.</p>
+
+                <p>Looking ahead, my goal is to contribute to meaningful projects that drive digital innovation and positive change. I am excited about future opportunities to learn, collaborate, and make a lasting impact through technology. Thank you for visiting my profile — let's connect and build the future together!</p>
+
+                <div class="button-group">
+                    <a href="#contact" class="btn-connect" id="open-popup">Let's Connect!</a>
+                    <a href="index.html" class="btn-connect">Home</a>
+                </div>
+            </div>
+
+            <div class="about-image">
+                <img src="Aset/Ersan.jpg" alt="Photo of Ersan Ivanda Putra">
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup Overlay -->
+    <div id="popup-overlay">
+        <div class="popup-content">
+            <button id="close-popup" class="close-btn" aria-label="Close">&times;</button>
+            <h3>Connect with Me</h3>
+            <div class="social-links">
+                <a href="https://instagram.com/canptr32" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://linkedin.com/in/ersan-ivanda-putra-509955241" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Buka Popup
+        document.getElementById('open-popup').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('popup-overlay').style.display = 'flex';
+        });
+
+        // Tutup Popup
+        document.getElementById('close-popup').addEventListener('click', function() {
+            document.getElementById('popup-overlay').style.display = 'none';
+        });
+
+        // Tutup Popup saat klik luar area
+        document.getElementById('popup-overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+<script src="canbot.js"></script>
+
+</html>
