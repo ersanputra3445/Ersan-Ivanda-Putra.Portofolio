@@ -39,34 +39,27 @@
 
 
       <!-- Digital Diploma -->
-      <!-- ===== DIGITAL DIPLOMA ===== -->
-      <section class="digital-diploma-section" id="digitalDiploma">
-
-        <!-- Loading -->
-        <div class="diploma-loading" id="diplomaLoading">
-          <div class="loader"></div>
-          <p>Loading Digital Diploma...</p>
-        </div>
-
-        <!-- Diploma -->
-        <div class="digital-diploma-card" id="diplomaContent">
-
-          <h2>Digital Diploma</h2>
-
-          <div class="diploma-viewer">
-            <iframe
-              src="Aset/Ijazah Digital Ersan Ivanda Putra.pdf#toolbar=0&navpanes=0&scrollbar=0"
-              title="Digital Diploma"
-            ></iframe>
-          </div>
-
-          <p class="diploma-verification">
-            Scan QR Code to Verify by Certix UMN
-          </p>
-
-        </div>
-
-      </section>
+<!-- ===== DIGITAL DIPLOMA ===== -->
+<section class="digital-diploma-section" id="digitalDiploma">
+  <!-- Loading -->
+  <div class="diploma-loading" id="diplomaLoading">
+    <div class="loader"></div>
+    <p>Loading Digital Diploma...</p>
+  </div>
+  <!-- Diploma -->
+  <div class="digital-diploma-card" id="diplomaContent">
+    <div class="diploma-header">
+      <h2>Digital Diploma</h2>
+      <button type="button" class="btn-close-diploma" onclick="closeDiploma()">✕ Close</button>
+    </div>
+    <div class="diploma-viewer">
+      <iframe id="diplomaFrame" src="" title="Digital Diploma"></iframe>
+    </div>
+    <p class="diploma-verification">
+      Scan QR Code to Verify by Certix UMN
+    </p>
+  </div>
+</section>
     </div>
   </header>
 
@@ -263,10 +256,43 @@
 
 
   <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-  <script src="database.js"></script>
-  <script src="canbot.js"></script>
-
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="database.js"></script>
+<script src="canbot.js"></script>
+<script>
+const diplomaPDF="Aset/Ijazah Digital Ersan Ivanda Putra.pdf#toolbar=0&navpanes=0&scrollbar=0";
+function showDiploma(){
+const diplomaSection=document.getElementById("digitalDiploma");
+const diplomaLoading=document.getElementById("diplomaLoading");
+const diplomaContent=document.getElementById("diplomaContent");
+const diplomaFrame=document.getElementById("diplomaFrame");
+diplomaSection.style.display="block";
+diplomaLoading.style.display="block";
+diplomaContent.style.display="none";
+diplomaFrame.src="";
+setTimeout(()=>{
+diplomaSection.scrollIntoView({behavior:"smooth",block:"start"});
+},100);
+setTimeout(()=>{
+diplomaFrame.src=diplomaPDF;
+diplomaFrame.onload=function(){
+diplomaLoading.style.display="none";
+diplomaContent.style.display="block";
+};
+},1200);
+}
+function closeDiploma(){
+const diplomaSection=document.getElementById("digitalDiploma");
+const diplomaLoading=document.getElementById("diplomaLoading");
+const diplomaContent=document.getElementById("diplomaContent");
+const diplomaFrame=document.getElementById("diplomaFrame");
+diplomaLoading.style.display="none";
+diplomaContent.style.display="none";
+diplomaSection.style.display="none";
+diplomaFrame.src="";
+window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
 </body>
 </html>
