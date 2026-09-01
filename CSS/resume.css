@@ -1,6 +1,37 @@
 /* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f5f5f5;
+  color: #1e293b;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
    HEADER
-   Style mengikuti CSS referensi
 ========================================================= */
 
 .resume-header {
@@ -19,26 +50,26 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  padding: 5rem 0 4rem;
+  padding: 80px 0 60px;
 
   overflow: hidden;
 }
 
-/* Overlay */
-
 .resume-header::before {
   content: "";
-  position: absolute;
 
+  position: absolute;
   inset: 0;
 
-  background: rgba(15, 23, 42, 0.78);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.94),
+      rgba(15, 23, 42, 0.78)
+    );
 
   z-index: 0;
 }
-
-
-/* Container Header */
 
 .resume-header .container {
   position: relative;
@@ -51,30 +82,30 @@
   margin: auto;
 }
 
-
-/* Nama */
-
 .resume-header h1 {
-  font-size: 2.8rem;
+  color: #fb923c;
+
+  font-size: 3rem;
 
   font-weight: 700;
 
-  margin-bottom: 1rem;
+  line-height: 1.2;
 
-  color: #fb923c;
+  margin-bottom: 15px;
 }
 
-
-/* Tagline */
-
 .resume-header .tagline {
-  color: #f8fafc;
+  color: #ffffff;
 
   font-size: 1rem;
 
-  margin-bottom: 1.8rem;
+  font-weight: 400;
 
-  line-height: 1.7;
+  line-height: 1.8;
+
+  margin: 0 auto 30px;
+
+  max-width: 850px;
 }
 
 
@@ -96,44 +127,63 @@
   margin-top: 20px;
 }
 
-
 .header-buttons a {
-  display: inline-block;
+  display: inline-flex;
 
-  padding: 0.75rem 1.5rem;
+  align-items: center;
 
-  border-radius: 30px;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 12px 22px;
+
+  border-radius: 999px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 14px;
 
   font-weight: 600;
 
-  font-size: 0.9rem;
+  line-height: 1.2;
 
   transition:
     background-color 0.3s ease,
     color 0.3s ease,
-    transform 0.3s ease;
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.header-buttons a:hover {
+  transform: translateY(-3px);
 }
 
 
-/* Download CV */
+/* CV */
 
 .btn-download {
-  background-color: #fb923c;
+  background: #fb923c;
+
+  border: 2px solid #fb923c;
 
   color: #ffffff;
 }
 
 .btn-download:hover {
-  background-color: #ea7a1c;
+  background: #ea7a1c;
 
-  transform: translateY(-2px);
+  border-color: #ea7a1c;
+
+  box-shadow: 0 8px 20px rgba(251, 146, 60, 0.25);
 }
 
 
-/* Download SKL */
+/* SKL */
 
 .btn-skl {
-  background-color: transparent;
+  background: transparent;
 
   border: 2px solid #fb923c;
 
@@ -141,18 +191,16 @@
 }
 
 .btn-skl:hover {
-  background-color: #fb923c;
+  background: #fb923c;
 
   color: #ffffff;
-
-  transform: translateY(-2px);
 }
 
 
 /* Digital Diploma */
 
 .btn-ijazah {
-  background-color: transparent;
+  background: transparent;
 
   border: 2px solid #fb923c;
 
@@ -160,25 +208,353 @@
 }
 
 .btn-ijazah:hover {
-  background-color: #fb923c;
+  background: #fb923c;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   DIGITAL DIPLOMA
+========================================================= */
+
+.digital-diploma-section {
+  display: none;
+
+  width: 100%;
+
+  padding: 45px 20px 10px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+.diploma-loading {
+  display: none;
+
+  text-align: center;
+
+  padding: 50px 20px;
+}
+
+.diploma-loading p {
+  margin-top: 15px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #ffffff;
+}
+
+.loader {
+  width: 45px;
+  height: 45px;
+
+  border: 4px solid rgba(255, 255, 255, 0.2);
+
+  border-top: 4px solid #fb923c;
+
+  border-radius: 50%;
+
+  animation: diplomaSpin 1s linear infinite;
+
+  margin: auto;
+}
+
+@keyframes diplomaSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.digital-diploma-card {
+  display: none;
+
+  width: 100%;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 30px;
+
+  border-radius: 18px;
+
+  background: rgba(15, 23, 42, 0.96);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+
+  text-align: center;
+}
+
+.digital-diploma-card h2 {
+  margin-bottom: 20px;
+
+  color: #fb923c;
+
+  font-size: 1.6rem;
+
+  font-weight: 700;
+}
+
+.diploma-viewer {
+  width: 100%;
+
+  height: 700px;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.diploma-viewer iframe {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+}
+
+.diploma-verification {
+  margin-top: 18px;
+
+  color: #d1d5db;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   RESUME WRAPPER
+========================================================= */
+
+.resume-wrapper {
+  width: 100%;
+
+  padding: 70px 0;
+
+  background: #f5f5f5;
+}
+
+.resume-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+
+/* =========================================================
+   RESUME CARD
+========================================================= */
+
+.card {
+  width: 100%;
+
+  padding: 30px 35px;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.09);
+}
+
+.card h2 {
+  color: #0f172a;
+
+  font-size: 1.35rem;
+
+  font-weight: 700;
+
+  margin-bottom: 15px;
+
+  padding-bottom: 10px;
+
+  border-bottom: 2px solid #fb923c;
+}
+
+.card p {
+  color: #475569;
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.edu-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.edu-text {
+  flex: 1;
+
+  color: #475569;
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+}
+
+.edu-text strong {
+  color: #0f172a;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+}
+
+.edu-logo {
+  width: 95px;
+
+  height: 95px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.card ul {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+.card ul li {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 8px 0;
+
+  color: #475569;
+
+  font-size: 0.95rem;
+}
+
+.card ul li i {
+  width: 22px;
+
+  color: #fb923c;
+
+  text-align: center;
+}
+
+.card ul li a {
+  color: #475569;
+
+  transition: color 0.3s ease;
+}
+
+.card ul li a:hover {
+  color: #fb923c;
+}
+
+
+/* =========================================================
+   SCROLLING BANNER
+========================================================= */
+
+.scrolling-banner {
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #fb923c;
+
+  padding: 14px 0;
+
+  white-space: nowrap;
+}
+
+.scrolling-text {
+  display: inline-block;
+
+  padding-left: 100%;
 
   color: #ffffff;
 
-  transform: translateY(-2px);
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  animation: scrollingText 20s linear infinite;
+}
+
+@keyframes scrollingText {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 
 /* =========================================================
    FOOTER
-   Style mengikuti CSS referensi
 ========================================================= */
 
 .footer {
+  width: 100%;
+
   background-color: #0e1629;
 
   color: #ffffff;
 
-  padding: 2rem 1rem 0;
+  padding: 45px 0 0;
 }
 
 
@@ -193,47 +569,52 @@
 
   align-items: center;
 
-  padding: 2rem 0 1rem;
-
-  flex-wrap: wrap;
-
-  gap: 20px;
+  width: 90%;
 
   max-width: 1200px;
 
-  width: 90%;
-
   margin: auto;
+
+  padding: 0 0 30px;
+
+  gap: 20px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
 .footer-top h2 {
+  margin: 0;
+
+  color: #ffffff;
+
   font-size: 1.5rem;
 
   font-weight: 600;
-
-  color: #ffffff;
 }
 
-
 .footer-hire-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 11px 22px;
+
+  border-radius: 999px;
+
   background-color: #f79834;
 
   color: #ffffff;
 
-  padding: 0.8rem 1.5rem;
-
-  border-radius: 999px;
+  font-size: 14px;
 
   font-weight: 600;
-
-  text-decoration: none;
 
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
 }
-
 
 .footer-hire-btn:hover {
   background-color: #fb923c;
@@ -247,39 +628,80 @@
 ========================================================= */
 
 .footer-content {
-  display: flex;
+  display: grid;
 
-  flex-wrap: wrap;
+  grid-template-columns:
+    1.5fr
+    1fr
+    1.2fr
+    1.3fr;
 
-  justify-content: space-between;
-
-  gap: 2rem;
-
-  padding: 2rem 0;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-  max-width: 1200px;
+  gap: 45px;
 
   width: 90%;
 
-  margin: auto;
-}
+  max-width: 1200px;
 
+  margin: auto;
+
+  padding: 40px 0;
+}
 
 .footer-col {
-  flex: 1 1 200px;
+  min-width: 0;
 }
-
 
 .footer-col h4 {
-  font-size: 1rem;
-
-  margin-bottom: 1rem;
+  margin: 0 0 18px;
 
   color: #ffffff;
+
+  font-size: 1rem;
+
+  font-weight: 600;
 }
 
+.footer-col p {
+  margin: 0;
+
+  color: #cbd5e1;
+
+  font-size: 0.88rem;
+
+  line-height: 1.8;
+}
+
+.footer-col em {
+  color: #ffffff;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   FOOTER LOGO
+========================================================= */
+
+.footer .logo {
+  margin-bottom: 15px;
+}
+
+.footer .logo img {
+  display: block;
+
+  width: auto;
+
+  height: 60px;
+
+  max-width: 150px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   FOOTER LIST
+========================================================= */
 
 .footer-col ul {
   list-style: none;
@@ -289,61 +711,26 @@
   margin: 0;
 }
 
-
 .footer-col ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
 
-  color: #ccc;
+  color: #cbd5e1;
 
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+
+  line-height: 1.6;
 }
 
-
 .footer-col ul li a {
-  color: #ccc;
+  color: #cbd5e1;
 
   text-decoration: none;
 
   transition: color 0.3s ease;
 }
 
-
 .footer-col ul li a:hover {
   color: #f79834 !important;
-}
-
-
-.footer-col p {
-  font-size: 0.9rem;
-
-  color: #ccc;
-
-  line-height: 1.7;
-}
-
-
-.footer-col em {
-  font-style: italic;
-
-  color: #f0f0f0;
-}
-
-
-/* =========================================================
-   FOOTER LOGO
-========================================================= */
-
-.footer .logo {
-  margin-bottom: 1rem;
-}
-
-
-.footer .logo img {
-  height: 55px;
-
-  width: auto;
-
-  object-fit: contain;
 }
 
 
@@ -356,30 +743,50 @@
 
   align-items: center;
 
-  margin-top: 1rem;
-}
+  gap: 15px;
 
+  margin-top: 20px;
+}
 
 .footer-col .social-icons a {
-  font-size: 1.2rem;
+  display: flex;
 
-  color: #ccc;
+  align-items: center;
 
-  margin-right: 1rem;
+  justify-content: center;
 
-  text-decoration: none;
+  width: 38px;
 
-  transition: color 0.3s ease;
+  height: 38px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
+
+  color: #cbd5e1;
+
+  font-size: 1.1rem;
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
-
 .footer-col .social-icons a:hover {
-  color: #f79834;
+  color: #ffffff;
+
+  background-color: #f79834;
+
+  border-color: #f79834;
+
+  transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   SUBSCRIBE
+   SUBSCRIBE FORM
 ========================================================= */
 
 .subscribe-form {
@@ -387,72 +794,81 @@
 
   align-items: center;
 
-  border: 1px solid #ccc;
-
-  border-radius: 2rem;
-
-  overflow: hidden;
-
   width: 100%;
 
   max-width: 320px;
+
+  height: 46px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 999px;
+
+  background: #ffffff;
 }
 
-
 .subscribe-form input {
-  padding: 0.6rem 1rem;
+  flex: 1;
+
+  min-width: 0;
+
+  height: 100%;
+
+  padding: 0 15px;
 
   border: none;
 
   outline: none;
 
-  flex: 1;
-
-  min-width: 0;
-
-  font-family: 'Poppins', sans-serif;
-
   background: #ffffff;
 
   color: #1e293b;
-}
 
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+}
 
 .subscribe-form input::placeholder {
   color: #64748b;
 }
 
-
 .subscribe-form button {
-  background-color: #f79834;
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 50px;
+
+  height: 100%;
 
   border: none;
 
-  color: #ffffff;
+  background-color: #f79834;
 
-  padding: 0.6rem 1rem;
+  color: #ffffff;
 
   cursor: pointer;
 
-  font-size: 1rem;
+  font-size: 18px;
 
   transition: background-color 0.3s ease;
 }
 
-
 .subscribe-form button:hover {
   background-color: #fb923c;
 }
-
-
-/* Success Message */
 
 #successMessage {
   margin-top: 10px;
 
   color: #f79834;
 
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 
@@ -461,170 +877,232 @@
 ========================================================= */
 
 .footer-bottom {
-  max-width: 1200px;
-
   width: 90%;
+
+  max-width: 1200px;
 
   margin: auto;
 
-  text-align: center;
-
-  padding: 1rem 0;
-
-  font-size: 0.85rem;
+  padding: 20px 0;
 
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-  color: #ccc;
+  text-align: center;
+
+  color: #94a3b8;
+
+  font-size: 0.78rem;
 
   line-height: 1.8;
 }
 
-
 .footer-bottom a {
   color: #f79834;
 
-  margin: 0 0.25rem;
+  margin: 0 4px;
 
   text-decoration: none;
 
   transition: color 0.3s ease;
 }
 
-
 .footer-bottom a:hover {
-  text-decoration: underline;
-
   color: #fb923c;
+
+  text-decoration: underline;
 }
 
 
 /* =========================================================
-   RESPONSIVE TABLET
+   TABLET
 ========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
   .resume-header {
     min-height: 600px;
-
-    padding: 4rem 0 3rem;
   }
 
   .resume-header h1 {
-    font-size: 2.2rem;
-  }
-
-  .resume-header .tagline {
-    font-size: 0.9rem;
-  }
-
-  .header-buttons {
-    gap: 10px;
-  }
-
-  .header-buttons a {
-    padding: 0.7rem 1.2rem;
-
-    font-size: 0.85rem;
-  }
-
-  .footer-top {
-    padding-top: 1.5rem;
+    font-size: 2.5rem;
   }
 
   .footer-content {
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
   }
 }
 
 
 /* =========================================================
-   RESPONSIVE MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
 
-  .resume-header {
-    min-height: 650px;
+  .container {
+    width: 92%;
+  }
 
-    padding: 4rem 0 3rem;
+
+  /* HEADER */
+
+  .resume-header {
+    min-height: auto;
+
+    padding: 75px 0 50px;
   }
 
   .resume-header h1 {
     font-size: 2rem;
 
-    line-height: 1.2;
+    line-height: 1.25;
   }
 
   .resume-header .tagline {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
 
     line-height: 1.8;
 
-    margin-bottom: 1.5rem;
+    margin-bottom: 25px;
   }
 
   .header-buttons {
     flex-direction: column;
 
     width: 100%;
+
+    gap: 10px;
   }
 
   .header-buttons a {
     width: 100%;
 
-    max-width: 320px;
+    max-width: 340px;
 
-    margin: 0;
+    min-height: 46px;
+
+    font-size: 13px;
   }
 
 
-  /* Footer */
+  /* DIPLOMA */
+
+  .digital-diploma-section {
+    padding: 30px 10px 0;
+  }
+
+  .digital-diploma-card {
+    padding: 18px;
+
+    border-radius: 14px;
+  }
+
+  .digital-diploma-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .diploma-viewer {
+    height: 500px;
+  }
+
+  .diploma-verification {
+    font-size: 12px;
+  }
+
+
+  /* RESUME */
+
+  .resume-wrapper {
+    padding: 45px 0;
+  }
+
+  .resume-content {
+    gap: 18px;
+  }
+
+  .card {
+    padding: 22px;
+
+    border-radius: 14px;
+  }
+
+  .card h2 {
+    font-size: 1.15rem;
+  }
+
+  .card p,
+  .edu-text,
+  .card ul li {
+    font-size: 0.85rem;
+  }
+
+  .edu-item {
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .edu-logo {
+    width: 70px;
+
+    height: 70px;
+  }
+
+
+  /* BANNER */
+
+  .scrolling-banner {
+    padding: 12px 0;
+  }
+
+  .scrolling-text {
+    font-size: 12px;
+  }
+
+
+  /* FOOTER */
 
   .footer {
-    padding: 1.5rem 1rem 0;
+    padding-top: 30px;
   }
 
   .footer-top {
+    width: 92%;
+
     flex-direction: column;
 
     align-items: flex-start;
 
-    gap: 1rem;
-
-    padding: 1.5rem 0 1rem;
+    padding-bottom: 25px;
   }
 
   .footer-top h2 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   .footer-hire-btn {
-    padding: 0.7rem 1.3rem;
+    padding: 10px 20px;
   }
 
   .footer-content {
-    flex-direction: column;
+    width: 92%;
 
-    gap: 2rem;
+    grid-template-columns: 1fr;
 
-    padding: 1.5rem 0;
+    gap: 30px;
+
+    padding: 30px 0;
   }
 
-  .footer-col {
-    flex: 1 1 100%;
+  .footer-bottom {
+    width: 92%;
+
+    font-size: 0.7rem;
   }
 
   .subscribe-form {
     max-width: 100%;
-  }
-
-  .footer-bottom {
-    width: 100%;
-
-    font-size: 0.75rem;
-
-    padding: 1rem 0;
   }
 }
