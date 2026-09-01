@@ -1,328 +1,86 @@
-/* ============================= */
-/* GLOBAL */
-/* ============================= */
+/* ===== DIGITAL DIPLOMA ===== */
 
-* {
-  margin: 0;
-  padding: 0;
+.digital-diploma-section {
+  display: none;
+  width: 100%;
+  padding: 40px 20px;
   box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #0f0f0f;
-  color: #ffffff;
-  line-height: 1.6;
-}
-
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-}
-
-
-/* ============================= */
-/* HEADER */
-/* ============================= */
-
-.resume-header {
-  padding: 100px 0;
   text-align: center;
-  background-size: cover;
-  background-position: center;
-  position: relative;
 }
 
-.resume-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+/* ===== LOADING ===== */
+
+.diploma-loading {
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.resume-header .container {
-  position: relative;
-  z-index: 2;
-}
-
-.resume-header h1 {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.tagline {
+.diploma-loading p {
+  margin-top: 15px;
   font-size: 16px;
+  font-weight: 600;
+}
+
+/* Loading Circle */
+.loader {
+  width: 45px;
+  height: 45px;
+  margin: auto;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid #ff8800;
+  border-radius: 50%;
+  animation: diplomaSpin 1s linear infinite;
+}
+
+@keyframes diplomaSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== DIPLOMA CARD ===== */
+
+.digital-diploma-card {
+  display: none;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 35px;
+  border-radius: 20px;
+  background: rgba(15, 15, 15, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.digital-diploma-card h2 {
   margin-bottom: 25px;
-  opacity: 0.85;
+  color: #ff8800;
 }
 
+/* ===== DIPLOMA VIEWER ===== */
 
-/* ============================= */
-/* HEADER BUTTONS */
-/* ============================= */
-
-.header-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.btn-download,
-.btn-skl {
-  padding: 12px 24px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s ease;
-  display: inline-block;
-}
-
-/* Primary Button */
-.btn-download {
-  background: #ff7a00;
-  color: #ffffff;
-}
-
-.btn-download:hover {
-  background: #ff9100;
-  transform: translateY(-3px);
-}
-
-/* Secondary Button */
-.btn-skl {
-  background: #ffffff;
-  color: #000000;
-}
-
-.btn-skl:hover {
-  background: #f2f2f2;
-  transform: translateY(-3px);
-}
-
-
-/* ============================= */
-/* RESUME SECTION */
-/* ============================= */
-
-.resume-wrapper {
-  padding: 80px 0;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 20px;
-  margin-bottom: 30px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.card h2 {
-  margin-bottom: 15px;
-  font-size: 20px;
-  color: #ff7a00;
-}
-
-.card p {
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-
-/* ============================= */
-/* EDUCATION */
-/* ============================= */
-
-.edu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.edu-logo {
-  width: 80px;
-  margin-top: 10px;
-}
-
-
-/* ============================= */
-/* CONTACT */
-/* ============================= */
-
-.card ul {
-  list-style: none;
-}
-
-.card ul li {
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.card ul li i {
-  margin-right: 8px;
-  color: #ff7a00;
-}
-
-.card a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.card a:hover {
-  text-decoration: underline;
-}
-
-
-/* ============================= */
-/* SCROLLING BANNER */
-/* ============================= */
-
-.scrolling-banner {
-  background: #ff7a00;
+.diploma-viewer {
+  width: 100%;
+  height: 750px;
   overflow: hidden;
-  white-space: nowrap;
-  padding: 15px 0;
+  border-radius: 12px;
+  background: #fff;
 }
 
-.scrolling-text {
-  display: inline-block;
-  animation: scrollText 20s linear infinite;
+.diploma-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===== VERIFICATION ===== */
+
+.diploma-verification {
+  margin-top: 20px;
+  font-size: 16px;
   font-weight: 600;
-  color: #000;
 }
-
-@keyframes scrollText {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-
-/* ============================= */
-/* FOOTER */
-/* ============================= */
-
-.footer {
-  background: #0a0a0a;
-  padding: 40px 0 10px 0;
-}
-
-.footer-top {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.footer-top h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.footer-hire-btn {
-  background: #ff7a00;
-  padding: 10px 25px;
-  border-radius: 30px;
-  color: #fff;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.footer-hire-btn:hover {
-  background: #ff9100;
-  transform: translateY(-3px);
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px; /* lebih rapat */
-  margin-bottom: 20px;
-}
-
-.footer-col h4 {
-  margin-bottom: 15px;
-  color: #ff7a00;
-}
-
-.footer-col ul {
-  list-style: none;
-}
-
-.footer-col ul li {
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.footer-col a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.footer-col a:hover {
-  text-decoration: underline;
-}
-
-.logo img {
-  width: 70px;
-  margin-bottom: 15px;
-}
-
-.social-icons a {
-  margin-right: 10px;
-  font-size: 18px;
-  color: #ffffff;
-  transition: 0.3s;
-}
-
-.social-icons a:hover {
-  color: #ff7a00;
-}
-
-
-/* ============================= */
-/* SUBSCRIBE FORM */
-/* ============================= */
-
-.subscribe-form {
-  display: flex;
-  gap: 10px;
-}
-
-.subscribe-form input {
-  flex: 1;
-  padding: 8px 12px;
-  border-radius: 20px;
-  border: none;
-}
-
-.subscribe-form button {
-  background: #ff7a00;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 20px;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.subscribe-form button:hover {
-  background: #ff9100;
-}
-
-.footer-bottom {
-  text-align: center;
-  font-size: 13px;
-  opacity: 0.7;
-}
-
-.footer-bottom a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.footer-bottom a:hover {
-  text-decoration: underline;
-}
-
