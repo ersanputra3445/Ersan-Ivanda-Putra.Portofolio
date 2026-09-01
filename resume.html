@@ -275,25 +275,21 @@ diplomaLoading.style.display="block";
 diplomaContent.style.display="none";
 diplomaImage.src="";
 
-setTimeout(()=>{
-diplomaSection.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
+setTimeout(function(){
+diplomaSection.scrollIntoView({behavior:"smooth",block:"start"});
 },100);
 
-setTimeout(()=>{
-diplomaImage.src=diplomaImagePath;
-
+setTimeout(function(){
 diplomaImage.onload=function(){
 diplomaLoading.style.display="none";
 diplomaContent.style.display="block";
 };
 
 diplomaImage.onerror=function(){
-diplomaLoading.style.display="none";
-alert("Ijazah tidak ditemukan. Periksa nama file JPG di folder Aset.");
+diplomaLoading.innerHTML="<p>Ijazah tidak ditemukan. Periksa nama file JPG di folder Aset.</p>";
 };
+
+diplomaImage.src=diplomaImagePath;
 },1200);
 }
 
@@ -307,11 +303,6 @@ diplomaLoading.style.display="none";
 diplomaContent.style.display="none";
 diplomaSection.style.display="none";
 diplomaImage.src="";
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
 }
 
 document.addEventListener("contextmenu",function(event){
