@@ -1,77 +1,630 @@
-/* ===== DIGITAL DIPLOMA ===== */
+/* =========================================================
+   HEADER
+   Style mengikuti CSS referensi
+========================================================= */
 
-.digital-diploma-section {
-  display: none;
+.resume-header {
   width: 100%;
-  padding: 40px 20px;
-  box-sizing: border-box;
+  min-height: 620px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 5rem 0 4rem;
+
+  overflow: hidden;
 }
 
-.diploma-loading {
-  display: none;
-  text-align: center;
-  padding: 60px 20px;
+/* Overlay */
+
+.resume-header::before {
+  content: "";
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(15, 23, 42, 0.78);
+
+  z-index: 0;
 }
 
-.diploma-loading p {
-  margin-top: 15px;
-  font-size: 16px;
-  font-weight: 600;
-}
 
-.loader {
-  width: 45px;
-  height: 45px;
-  border: 4px solid rgba(255, 255, 255, 0.2);
-  border-top: 4px solid #ff8800;
-  border-radius: 50%;
-  animation: diplomaSpin 1s linear infinite;
+/* Container Header */
+
+.resume-header .container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 90%;
+  max-width: 1200px;
+
   margin: auto;
 }
 
-@keyframes diplomaSpin {
-  0% {
-    transform: rotate(0deg);
-  }
 
-  100% {
-    transform: rotate(360deg);
-  }
+/* Nama */
+
+.resume-header h1 {
+  font-size: 2.8rem;
+
+  font-weight: 700;
+
+  margin-bottom: 1rem;
+
+  color: #fb923c;
 }
 
-.digital-diploma-card {
-  display: none;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 35px;
-  border-radius: 20px;
-  background: rgba(15, 15, 15, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+
+/* Tagline */
+
+.resume-header .tagline {
+  color: #f8fafc;
+
+  font-size: 1rem;
+
+  margin-bottom: 1.8rem;
+
+  line-height: 1.7;
 }
 
-.digital-diploma-card h2 {
-  margin-bottom: 25px;
-  color: #ff8800;
-}
 
-.diploma-viewer {
-  width: 100%;
-  height: 750px;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #fff;
-}
+/* =========================================================
+   HEADER BUTTONS
+========================================================= */
 
-.diploma-viewer iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+.header-buttons {
+  display: flex;
 
-.diploma-verification {
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
   margin-top: 20px;
-  font-size: 16px;
+}
+
+
+.header-buttons a {
+  display: inline-block;
+
+  padding: 0.75rem 1.5rem;
+
+  border-radius: 30px;
+
   font-weight: 600;
+
+  font-size: 0.9rem;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* Download CV */
+
+.btn-download {
+  background-color: #fb923c;
+
+  color: #ffffff;
+}
+
+.btn-download:hover {
+  background-color: #ea7a1c;
+
+  transform: translateY(-2px);
+}
+
+
+/* Download SKL */
+
+.btn-skl {
+  background-color: transparent;
+
+  border: 2px solid #fb923c;
+
+  color: #fb923c;
+}
+
+.btn-skl:hover {
+  background-color: #fb923c;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* Digital Diploma */
+
+.btn-ijazah {
+  background-color: transparent;
+
+  border: 2px solid #fb923c;
+
+  color: #fb923c;
+}
+
+.btn-ijazah:hover {
+  background-color: #fb923c;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER
+   Style mengikuti CSS referensi
+========================================================= */
+
+.footer {
+  background-color: #0e1629;
+
+  color: #ffffff;
+
+  padding: 2rem 1rem 0;
+}
+
+
+/* =========================================================
+   FOOTER TOP
+========================================================= */
+
+.footer-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 2rem 0 1rem;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+
+  max-width: 1200px;
+
+  width: 90%;
+
+  margin: auto;
+}
+
+
+.footer-top h2 {
+  font-size: 1.5rem;
+
+  font-weight: 600;
+
+  color: #ffffff;
+}
+
+
+.footer-hire-btn {
+  background-color: #f79834;
+
+  color: #ffffff;
+
+  padding: 0.8rem 1.5rem;
+
+  border-radius: 999px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.footer-hire-btn:hover {
+  background-color: #fb923c;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER CONTENT
+========================================================= */
+
+.footer-content {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  padding: 2rem 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  max-width: 1200px;
+
+  width: 90%;
+
+  margin: auto;
+}
+
+
+.footer-col {
+  flex: 1 1 200px;
+}
+
+
+.footer-col h4 {
+  font-size: 1rem;
+
+  margin-bottom: 1rem;
+
+  color: #ffffff;
+}
+
+
+.footer-col ul {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+
+  color: #ccc;
+
+  font-size: 0.9rem;
+}
+
+
+.footer-col ul li a {
+  color: #ccc;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+
+.footer-col ul li a:hover {
+  color: #f79834 !important;
+}
+
+
+.footer-col p {
+  font-size: 0.9rem;
+
+  color: #ccc;
+
+  line-height: 1.7;
+}
+
+
+.footer-col em {
+  font-style: italic;
+
+  color: #f0f0f0;
+}
+
+
+/* =========================================================
+   FOOTER LOGO
+========================================================= */
+
+.footer .logo {
+  margin-bottom: 1rem;
+}
+
+
+.footer .logo img {
+  height: 55px;
+
+  width: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.footer-col .social-icons {
+  display: flex;
+
+  align-items: center;
+
+  margin-top: 1rem;
+}
+
+
+.footer-col .social-icons a {
+  font-size: 1.2rem;
+
+  color: #ccc;
+
+  margin-right: 1rem;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+
+.footer-col .social-icons a:hover {
+  color: #f79834;
+}
+
+
+/* =========================================================
+   SUBSCRIBE
+========================================================= */
+
+.subscribe-form {
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #ccc;
+
+  border-radius: 2rem;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  max-width: 320px;
+}
+
+
+.subscribe-form input {
+  padding: 0.6rem 1rem;
+
+  border: none;
+
+  outline: none;
+
+  flex: 1;
+
+  min-width: 0;
+
+  font-family: 'Poppins', sans-serif;
+
+  background: #ffffff;
+
+  color: #1e293b;
+}
+
+
+.subscribe-form input::placeholder {
+  color: #64748b;
+}
+
+
+.subscribe-form button {
+  background-color: #f79834;
+
+  border: none;
+
+  color: #ffffff;
+
+  padding: 0.6rem 1rem;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+
+  transition: background-color 0.3s ease;
+}
+
+
+.subscribe-form button:hover {
+  background-color: #fb923c;
+}
+
+
+/* Success Message */
+
+#successMessage {
+  margin-top: 10px;
+
+  color: #f79834;
+
+  font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+  max-width: 1200px;
+
+  width: 90%;
+
+  margin: auto;
+
+  text-align: center;
+
+  padding: 1rem 0;
+
+  font-size: 0.85rem;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: #ccc;
+
+  line-height: 1.8;
+}
+
+
+.footer-bottom a {
+  color: #f79834;
+
+  margin: 0 0.25rem;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+
+  color: #fb923c;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .resume-header {
+    min-height: 600px;
+
+    padding: 4rem 0 3rem;
+  }
+
+  .resume-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .resume-header .tagline {
+    font-size: 0.9rem;
+  }
+
+  .header-buttons {
+    gap: 10px;
+  }
+
+  .header-buttons a {
+    padding: 0.7rem 1.2rem;
+
+    font-size: 0.85rem;
+  }
+
+  .footer-top {
+    padding-top: 1.5rem;
+  }
+
+  .footer-content {
+    gap: 1.5rem;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .resume-header {
+    min-height: 650px;
+
+    padding: 4rem 0 3rem;
+  }
+
+  .resume-header h1 {
+    font-size: 2rem;
+
+    line-height: 1.2;
+  }
+
+  .resume-header .tagline {
+    font-size: 0.8rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 1.5rem;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .header-buttons a {
+    width: 100%;
+
+    max-width: 320px;
+
+    margin: 0;
+  }
+
+
+  /* Footer */
+
+  .footer {
+    padding: 1.5rem 1rem 0;
+  }
+
+  .footer-top {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 1rem;
+
+    padding: 1.5rem 0 1rem;
+  }
+
+  .footer-top h2 {
+    font-size: 1.3rem;
+  }
+
+  .footer-hire-btn {
+    padding: 0.7rem 1.3rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+
+    gap: 2rem;
+
+    padding: 1.5rem 0;
+  }
+
+  .footer-col {
+    flex: 1 1 100%;
+  }
+
+  .subscribe-form {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    width: 100%;
+
+    font-size: 0.75rem;
+
+    padding: 1rem 0;
+  }
 }
