@@ -312,11 +312,15 @@ background:#fff;
 box-shadow:0 5px 25px rgba(0,0,0,0.3);
 }
 
-.diploma-viewer iframe{
+.diploma-viewer img{
 display:block;
 width:100%;
-height:100%;
-border:none;
+height:auto;
+max-width:100%;
+user-select:none;
+-webkit-user-select:none;
+-webkit-user-drag:none;
+pointer-events:none;
 }
 
 .diploma-verification{
